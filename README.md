@@ -21,6 +21,20 @@ A aplicação permite cadastrar clientes e gerenciar encomendas, acompanhando in
 - Controle de status das encomendas
 - Registro de informações da encomenda
 
+## Interface
+
+### Tela de Encomendas
+
+![Tela de encomendas](screenshots/telaEncomendas.png)
+
+### Tela de Clientes
+
+![Tela de clientes](screenshots/telaClientes.png)
+
+### Cadastro de Encomenda
+
+![Cadastro de encomenda](screenshots/cadastro.png)
+
 ## Tecnologias
 
 - Python
