@@ -1,0 +1,108 @@
+{% extends 'encomendas/base.html' %}
+
+{% block title %}Encomendas - CrochêGest{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+
+<div>
+    <h2>Encomendas</h2>
+    <p>Gerencie suas encomendas de crochê.</p>
+</div>
+
+<div class="page-actions">
+    <a class="btn btn-primary" href="{% url 'cadastrar_encomenda' %}">
+        + Nova encomenda
+    </a>
+</div>
+
+</div>
+
+{% if encomendas %}
+
+<div class="table-container">
+
+<table class="orders-table">
+
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Cor</th>
+            <th>Data do pedido</th>
+            <th>Entrega</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for encomenda in encomendas %}
+
+        <tr>
+            <td>{{ encomenda.cliente }}</td>
+
+            <td>{{ encomenda.produto }}</td>
+
+            <td>{{ encomenda.cor }}</td>
+
+            <td>{{ encomenda.data_pedido }}</td>
+
+            <td>{{ encomenda.data_entrega }}</td>
+
+            <td>R$ {{ encomenda.valor }}</td>
+
+            <td>
+                <span class="status">
+                    {{ encomenda.get_status_display }}
+                </span>
+            </td>
+
+            <td class="actions">
+
+                <a
+                    class="action-edit"
+                    href="{% url 'editar_encomenda' encomenda.id %}"
+                >
+                    Editar
+                </a>
+
+                <a
+                    class="action-delete"
+                    href="{% url 'excluir_encomenda' encomenda.id %}"
+                    onclick="return confirm('Tem certeza que deseja excluir esta encomenda?');"
+                >
+                    Excluir
+                </a>
+
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+</div>
+
+{% else %}
+
+<div class="empty-state">
+
+<h3>Nenhuma encomenda cadastrada</h3>
+
+<p>Comece cadastrando sua primeira encomenda.</p>
+
+<a class="btn btn-primary" href="{% url 'cadastrar_encomenda' %}">
+    + Nova encomenda
+</a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

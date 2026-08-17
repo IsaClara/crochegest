@@ -1,0 +1,151 @@
+{% extends 'encomendas/base.html' %}
+
+{% block title %}Editar Encomenda - CrochêGest{% endblock %}
+
+{% block content %}
+
+<div class="form-page">
+
+<div class="page-header">
+    <div>
+        <h2>Editar encomenda</h2>
+        <p>Altere os dados da encomenda.</p>
+    </div>
+</div>
+
+<div class="form-container">
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="cliente">Cliente:</label>
+
+            <select
+                id="cliente"
+                name="cliente"
+                required
+            >
+
+                {% for cliente in clientes %}
+
+                    <option
+                        value="{{ cliente.id }}"
+                        {% if cliente.id == encomenda.cliente.id %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ cliente.nome }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="produto">Produto:</label>
+
+            <input
+                type="text"
+                id="produto"
+                name="produto"
+                value="{{ encomenda.produto }}"
+                required
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="cor">Cor:</label>
+
+            <input
+                type="text"
+                id="cor"
+                name="cor"
+                value="{{ encomenda.cor }}"
+                required
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="data_entrega">Data de entrega:</label>
+
+            <input
+                type="datetime-local"
+                id="data_entrega"
+                name="data_entrega"
+                value="{{ encomenda.data_entrega|date:'Y-m-d\TH\:i' }}"
+                required
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="valor">Valor:</label>
+
+            <input
+                type="number"
+                id="valor"
+                name="valor"
+                step="0.01"
+                value="{{ encomenda.valor|stringformat:'.2f' }}"
+                required
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+
+            <select
+                id="status"
+                name="status"
+                required
+            >
+
+                {% for codigo, nome in status_choices %}
+
+                    <option
+                        value="{{ codigo }}"
+                        {% if encomenda.status == codigo %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ nome }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+        </div>
+
+
+        <div class="form-actions">
+
+            <a
+                class="btn btn-secondary"
+                href="{% url 'listar_encomendas' %}"
+            >
+                Cancelar
+            </a>
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Salvar alterações
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</div>
+
+{% endblock %}

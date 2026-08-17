@@ -1,0 +1,527 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f5f2;
+    color: #333;
+}
+
+
+/* =========================
+   TOP BAR
+   ========================= */
+
+header {
+    height: 82px;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #e5dfda;
+
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Marca */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* Espaço reservado para o ícone */
+
+.logo-placeholder {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background-color: #f3e8f0;
+
+    flex-shrink: 0;
+}
+
+
+/* Nome do sistema */
+
+.brand-text h1 {
+    margin: 0;
+
+    color: #7b4b6f;
+
+    font-size: 21px;
+}
+
+
+.brand-text span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+
+/* Navegação */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+nav a {
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: #555;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+nav a:hover {
+    background-color: #f7f2f5;
+    color: #7b4b6f;
+}
+
+
+nav a.active {
+    background-color: #f3e8f0;
+    color: #7b4b6f;
+}
+
+
+/* =========================
+   CONTEÚDO
+   ========================= */
+
+main {
+    padding: 40px;
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+
+a {
+    color: #7b4b6f;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   CABEÇALHO DA PÁGINA
+   ========================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.page-header h2 {
+    margin: 0 0 6px;
+}
+
+
+.page-header p {
+    margin: 0;
+
+    color: #777;
+}
+
+
+.page-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* =========================
+   BOTÕES
+   ========================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+.btn-primary {
+    background-color: #7b4b6f;
+
+    color: white;
+}
+
+
+.btn-primary:hover {
+    background-color: #663d5c;
+}
+
+
+.btn-secondary {
+    background-color: white;
+
+    color: #7b4b6f;
+
+    border: 1px solid #d8c8d3;
+}
+
+
+.btn-secondary:hover {
+    background-color: #f5edf3;
+}
+
+
+/* =========================
+   TABELA
+   ========================= */
+
+.table-container {
+    background-color: white;
+
+    border: 1px solid #e5dfda;
+
+    border-radius: 12px;
+
+    overflow-x: auto;
+}
+
+
+.orders-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.orders-table th {
+    padding: 15px;
+
+    text-align: left;
+
+    background-color: #f7f2f5;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+.orders-table td {
+    padding: 15px;
+
+    border-top: 1px solid #eee;
+
+    color: #444;
+}
+
+
+.orders-table tbody tr:hover {
+    background-color: #fcfafb;
+}
+
+
+/* =========================
+   STATUS
+   ========================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: #f3e8f0;
+
+    color: #7b4b6f;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   AÇÕES
+   ========================= */
+
+.actions {
+    white-space: nowrap;
+}
+
+
+.action-edit,
+.action-delete {
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+
+.action-edit {
+    color: #7b4b6f;
+}
+
+
+.action-delete {
+    color: #a64d4d;
+}
+
+
+/* =========================
+   ESTADO VAZIO
+   ========================= */
+
+.empty-state {
+    background-color: white;
+
+    border: 1px solid #e5dfda;
+
+    border-radius: 12px;
+
+    padding: 50px;
+
+    text-align: center;
+}
+
+
+.empty-state h3 {
+    margin-top: 0;
+}
+
+
+.empty-state p {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORMULÁRIOS
+   ========================= */
+
+.form-container {
+    max-width: 650px;
+
+    background-color: white;
+
+    border: 1px solid #e5dfda;
+
+    border-radius: 12px;
+
+    padding: 30px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    font-weight: bold;
+
+    color: #444;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #d8d0cb;
+
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    background-color: white;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+
+    border-color: #7b4b6f;
+}
+
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* Top bar */
+
+    header {
+        height: auto;
+
+        padding: 18px 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .brand {
+        width: 100%;
+    }
+
+
+    nav {
+        width: 100%;
+
+        gap: 5px;
+    }
+
+
+    nav a {
+        flex: 1;
+
+        text-align: center;
+
+        padding: 10px 8px;
+    }
+
+
+    /* Conteúdo */
+
+    main {
+        padding: 25px 20px;
+    }
+
+
+    /* Cabeçalho das páginas */
+
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .page-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+
+    .page-actions .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* Tabela */
+
+    .table-container {
+        width: 100%;
+    }
+
+
+    .orders-table {
+        min-width: 750px;
+    }
+
+
+    /* Formulários */
+
+    .form-container {
+        max-width: 100%;
+
+        padding: 22px;
+    }
+
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+
+    .form-actions .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* Estado vazio */
+
+    .empty-state {
+        padding: 35px 20px;
+    }
+
+}
